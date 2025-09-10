@@ -46,4 +46,12 @@ export const tmdbApi = {
     const res = await api.get("/genre/movie/list");
     return res.data.genres;
   },
+
+  getMovieVideos: async (movieId: string | number) => {
+  const res = await axios.get(
+    `${BASE_URL}/movie/${movieId}/videos?api_key=${API_KEY}&language=en-US`
+  );
+  return res.data.results; 
+},
+
 };

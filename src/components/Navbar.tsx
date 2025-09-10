@@ -57,7 +57,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch, onFilterChange }) => {
   return (
     <nav className="bg-[#1F1F29] p-4 flex flex-col w-full text-white relative">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 -mx-4 ">
           <img src={AvatarIcon} alt={user.name} className="w-10 h-10 rounded-[37px]" />
           <div className="flex flex-col">
             <span className="font-normal text-[12px] leading-[18px]" style={{ color: "#B9C1D9" }}>
@@ -68,7 +68,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch, onFilterChange }) => {
             </span>
           </div>
         </div>
-        <img src={LinesIcon} alt="Menu" className="w-6 h-6" />
+        <img src={LinesIcon} alt="Menu" className="w-6 h-6 -mx-4" />
       </div>
 
       {/* Search input */}

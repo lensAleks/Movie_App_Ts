@@ -36,6 +36,15 @@ const Home = () => {
     fetchData();
   }, []);
 
+
+  useEffect(() => {
+    if (popularMovies.length > 0) {
+      updateScrollButtons(popularRef, setCanScrollLeftPopular, setCanScrollRightPopular);
+    }
+    if (recommendedMovies.length > 0) {
+      updateScrollButtons(recommendedRef, setCanScrollLeftRecommended, setCanScrollRightRecommended);
+    }
+  }, [popularMovies, recommendedMovies]);
  
   useEffect(() => {
     const allMovies = [...popularMovies, ...recommendedMovies];
@@ -104,7 +113,7 @@ const Home = () => {
     isFirst?: boolean
   ) => (
     <div className={isFirst ? "mb-14" : "mb-1"}>
-      <div className="flex items-center justify-between mb-4 mt-6">
+      <div className="flex items-center justify-between mb-5 mt-9">
         <h2 className="text-white text-[20px] font-semibold">{title}</h2>
         <div className="flex gap-2">
           <button
